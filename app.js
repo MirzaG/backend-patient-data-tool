@@ -16,8 +16,14 @@ require('./src/config/sequelize');
 
 const app = express();
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3001"); // Added to resolve CORS error
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://frontend-patient-data-tool.vercel.app"
+  ); // Added to resolve CORS error
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 });
 
