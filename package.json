@@ -26,7 +26,7 @@
     "db:seed:undo:all": "npx sequelize-cli db:seed:undo:all"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=11.14"
   },
   "author": "Mirza Usman Tahir",
   "license": "ISC",
@@ -40,7 +40,6 @@
     "axios": "^0.21.2",
     "babel-loader": "^8.0.0-beta.0",
     "body-parser": "^1.19.0",
-    "cluster": "^0.7.7",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^8.0.0",
@@ -59,7 +58,9 @@
     "pg": "^8.11.0",
     "sequelize": "^5.15.1",
     "sequelize-cli": "^5.4.0",
-    "twilio": "^4.11.0"
+    "twilio": "^4.11.0",
+    "gaxios": "5.0.2",
+    "mocha": "10.1.0"
   },
   "devDependencies": {
     "babel-jest": "^24.8.0",

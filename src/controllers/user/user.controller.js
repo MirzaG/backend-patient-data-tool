@@ -75,17 +75,17 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const user = await User.scope('withSecretColumns').findOne({
-      where: { email: req.body.email },
+      where: { email: req.body.email, role: req.body.role },
     });
     if (!user) {
-      throw new Error('Incorrect Email Id/Password');
+      throw new Error('Incorrect EmailId,Role OR Password');
     }
     const reqPass = crypto
       .createHash('md5')
       .update(req.body.password || '')
       .digest('hex');
     if (reqPass !== user.password) {
-      throw new Error('Incorrect Email Id/Password');
+      throw new Error('Incorrect EmailId,Role OR Password');
     }
     const token = jwt.sign(
       {

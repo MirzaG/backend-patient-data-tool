@@ -30,5 +30,6 @@ export const login = {
       .email()
       .required(),
     password: Joi.string().required(),
+    role: Joi.string().required(),
   },
 };
