@@ -6,7 +6,12 @@ export const getAllQuestions = async (req, res) => {
     const page = req.params.page || 1;
     const limit = 10;
     const questions = await Question.findAndCountAll({
-      order: [['createdAt', 'DESC']],
+      order: [["createdAt", "DESC"]],
+      where: {
+        ...(req.query.templateId && {
+          templateId: req.query.templateId,
+        }),
+      },
       // offset: (page - 1) * limit,
       // limit,
     });
@@ -16,19 +21,20 @@ export const getAllQuestions = async (req, res) => {
   }
 };
 
-
 export const addQuestion = async (req, res) => {
   try {
     const {
       question_text: text,
       question_type: type,
-      options
+      options,
+      templateId,
     } = req.body;
     const payload = {
       text,
       type,
-      options
-    }
+      templateId,
+      options,
+    };
     const response = await Question.create(payload);
     return successResponse(req, res, { questions: response });
   } catch (error) {

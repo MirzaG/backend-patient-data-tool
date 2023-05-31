@@ -10,36 +10,46 @@ import * as questionValidator from '../controllers/question/question.validator';
 import * as submissionController from '../controllers/response/response.controller';
 import * as submissionValidator from '../controllers/response/response.validator';
 
+import * as templatesController from "../controllers/templates/template.controller";
+import * as templatesValidator from "../controllers/templates/template.validator";
+
 const router = express.Router();
 
 //= ===============================
 // API routes
 //= ===============================
-router.get('/me', userController.profile);
+router.get("/me", userController.profile);
 
 router.post(
-  '/changePassword',
+  "/changePassword",
   validate(userValidator.changePassword),
-  userController.changePassword,
+  userController.changePassword
 );
 
 router.post(
-  '/questions',
+  "/questions",
   validate(questionValidator.addNewQuestion),
-  questionController.addQuestion,
+  questionController.addQuestion
 );
 
 router.put(
-  '/questions',
+  "/questions",
   validate(questionValidator.updateQuestion),
-  questionController.updateQuestion,
+  questionController.updateQuestion
 );
 
-router.get(
-  '/questions',
-  questionController.getAllQuestions,
+router.get("/questions", questionController.getAllQuestions);
+
+// Templates
+router.post(
+  "/templates",
+  validate(templatesValidator.addNewTemplate),
+  templatesController.addTemplate
 );
 
+router.get("/templates", templatesController.getAllTemplates);
+
+// Patients
 
 router.post(
   '/patient/:userId/responses',
