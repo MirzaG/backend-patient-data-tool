@@ -9,13 +9,7 @@ const router = express.Router();
 // SMS routes
 //= ===============================
 
-router.post(
-  '/receive',
-  smsController.receiveSMS,
-);
-router.get(
-  '/send',
-  smsController.sendSMS,
-);
+router.post("/", smsController.receiveSMS);
+router.get("/test", smsController.sendExampleSMS);
 
 module.exports = router;

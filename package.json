@@ -46,10 +46,12 @@
     "express": "^4.16.4",
     "express-joi-validator": "^2.0.1",
     "express-validation": "^1.0.2",
+    "gaxios": "5.0.2",
     "http": "0.0.0",
     "jest": "^24.8.0",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "10.1.0",
     "mock-express-response": "^0.2.2",
     "mysql2": "^1.6.5",
     "node-cron": "^3.0.2",
@@ -58,9 +60,7 @@
     "pg": "^8.11.0",
     "sequelize": "^5.15.1",
     "sequelize-cli": "^5.4.0",
-    "twilio": "^4.11.0",
-    "gaxios": "5.0.2",
-    "mocha": "10.1.0"
+    "twilio": "^4.11.1"
   },
   "devDependencies": {
     "babel-jest": "^24.8.0",
