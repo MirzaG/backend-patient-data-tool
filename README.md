@@ -34,6 +34,13 @@ APP_PORT=8080           # application port
 SECRET=secret           # secret key for encrypt/decrypt JWT token
 ```
 
+Twillio integration keys need to be added in **.env** file
+```
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_SMS_FROM=
+```
+
 are you going to user google captcha while register? then also add/update in .env 
 ```
 IS_GOOGLE_AUTH_ENABLE=true          # enable google captcha
