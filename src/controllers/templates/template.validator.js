@@ -5,3 +5,10 @@ export const addNewTemplate = {
     name: Joi.string().required(),
   },
 };
+
+export const sendTemplateToPatient = {
+  body: {
+    templateId: Joi.number().required(),
+    patientContact: Joi.string().required(),
+  },
+};

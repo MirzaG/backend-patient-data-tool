@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     Templates.hasMany(models.Question, {
       onDelete: "CASCADE",
       foreignKey: "templateId",
-      as: "question",
     });
   };
   return Templates;

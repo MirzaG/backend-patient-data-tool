@@ -6,7 +6,7 @@ export const getAllQuestions = async (req, res) => {
     const page = req.params.page || 1;
     const limit = 10;
     const questions = await Question.findAndCountAll({
-      order: [["createdAt", "DESC"]],
+      order: [["createdAt", "ASC"]],
       where: {
         ...(req.query.templateId && {
           templateId: req.query.templateId,

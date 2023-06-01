@@ -57,15 +57,28 @@ router.post(
   submissionController.addResponse,
 );
 
+// router.get(
+//   '/patient/:userId/responses',
+//   submissionController.getAllResponsesForPatient,
+// );
 router.get(
-  '/patient/:userId/responses',
-  submissionController.getAllResponsesForPatient,
+  "/patient/:contactId/responses",
+  submissionController.getAllResponsesForPatient
 );
 
-router.get(
-  '/patient/responses/summary',
-  submissionController.getPatientResponsesUsers,
-);
 
+// router.get(
+//   '/patient/responses/summary',
+//   submissionController.getPatientResponsesUsers,
+// );
+router.get(
+  "/patient/responses/summary",
+  submissionController.getPatientResponsesByContactId
+);
+router.post(
+  "/template/patient",
+  validate(templatesValidator.sendTemplateToPatient),
+  templatesController.sendTemplateToPatient
+);
 
 module.exports = router;
